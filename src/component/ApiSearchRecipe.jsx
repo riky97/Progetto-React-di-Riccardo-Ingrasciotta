@@ -12,7 +12,7 @@ const ApiSearchRecipe = () => {
     };
     data();
   });
-  console.log("s");
+  console.log("ccs");
   const getRecipe = async () => {
     const res = await axios.get(
       "https://api.spoonacular.com/recipes/information?apiKey=b15934b87b68488c9aa1d10cc6068159&complexSearch?query=pasta&maxFat=25&number=2"
