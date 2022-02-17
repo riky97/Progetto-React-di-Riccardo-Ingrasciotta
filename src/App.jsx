@@ -1,5 +1,7 @@
 import Recipes from "./component/Recipes";
 import { useEffect, useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import "antd/dist/antd.css";
 import axios from "axios";
 
 function App() {
@@ -23,8 +25,11 @@ function App() {
   };
   return (
     <div className="App">
-      <h1>hello world!</h1>
-      <Recipes recipe={recipes} />
+      <Router>
+        <Routes>
+          <Route exact path="/" element={<Recipes recipe={recipes} />} />
+        </Routes>
+      </Router>
     </div>
   );
 }

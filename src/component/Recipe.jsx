@@ -1,25 +1,32 @@
 import React from "react";
-import { Card } from "antd";
-import Meta from "antd/lib/card/Meta";
-import {
-  EditOutlined,
-  EllipsisOutlined,
-  SettingOutlined,
-} from "@ant-design/icons";
+import { Card, Tooltip } from "antd";
 
-const Recipe = (props) => {
+import Meta from "antd/lib/card/Meta";
+import { SettingOutlined } from "@ant-design/icons";
+
+const Recipe = ({ recipe }) => {
   return (
-    <Card
-      style={{ width: 300 }}
-      cover={<img alt="example" src={props.recipe.image} />}
-      actions={[
-        <SettingOutlined key="setting" />,
-        <EditOutlined key="edit" />,
-        <EllipsisOutlined key="ellipsis" />,
-      ]}
-    >
-      <Meta title={props.recipe.title} description="This is the description" />
-    </Card>
+    <a href={`/recipe/${recipe.id}`}>
+      <Card
+        style={{ width: 300, cursor: "pointer" }}
+        cover={<img alt="example" src={recipe.image} />}
+        actions={[<SettingOutlined key="setting" />]}
+      >
+        <Meta
+          title={
+            <Tooltip
+              placement="top"
+              color={"#87d068"}
+              key={"#87d068"}
+              title={recipe.title}
+            >
+              {recipe.title}
+            </Tooltip>
+          }
+          description="This is the description"
+        />
+      </Card>
+    </a>
   );
 };
 
