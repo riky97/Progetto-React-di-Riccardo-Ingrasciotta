@@ -1,32 +1,49 @@
-import React from "react";
-import { Card, Tooltip } from "antd";
+import { Card, Tooltip, Image } from "antd";
+import { useState } from "react";
 
 import Meta from "antd/lib/card/Meta";
-import { SettingOutlined } from "@ant-design/icons";
+import { SettingOutlined, EyeOutlined } from "@ant-design/icons";
 
 const Recipe = ({ recipe }) => {
+  const [visible, setVisible] = useState(false);
   return (
-    <a href={`/recipe/${recipe.id}`}>
-      <Card
-        style={{ width: 300, cursor: "pointer" }}
-        cover={<img alt="example" src={recipe.image} />}
-        actions={[<SettingOutlined key="setting" />]}
-      >
-        <Meta
-          title={
-            <Tooltip
-              placement="top"
-              color={"#87d068"}
-              key={"#87d068"}
-              title={recipe.title}
-            >
-              {recipe.title}
-            </Tooltip>
-          }
-          description="This is the description"
-        />
-      </Card>
-    </a>
+    <Card
+      style={{ width: 300 }}
+      cover={
+        <a href={`/recipe/${recipe.id}`}>
+          <img style={{ width: 300 }} alt="Recipe" src={recipe.image} />
+        </a>
+      }
+      actions={[
+        <EyeOutlined onClick={() => setVisible(true)} />,
+        <a href={`/recipe/${recipe.id}`}>
+          <SettingOutlined key="setting" />
+        </a>,
+      ]}
+    >
+      <Image
+        style={{ display: "none" }}
+        preview={{
+          visible,
+          src: recipe.image,
+          onVisibleChange: (value) => {
+            setVisible(value);
+          },
+        }}
+      />
+      <Meta
+        title={
+          <Tooltip
+            placement="top"
+            color={"#87d068"}
+            key={"#87d068"}
+            title={recipe.title}
+          >
+            {recipe.title}
+          </Tooltip>
+        }
+      />
+    </Card>
   );
 };
 
