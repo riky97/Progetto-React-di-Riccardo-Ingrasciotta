@@ -2,17 +2,21 @@ import Recipes from "./component/Recipes";
 import { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Layout, Breadcrumb, BackTop } from "antd";
-import Navbar from "./component/Navbar";
-import FooterWeb from "./FooterWeb";
 import "antd/dist/antd.css";
 import axios from "axios";
 import { UpCircleOutlined } from "@ant-design/icons";
+
+import Navbar from "./component/Navbar";
+import FooterWeb from "./FooterWeb";
+import Sidebar from "./component/Sidebar";
+import useWindowDimensions from "./component/UseWindowDimensions";
 
 const { Content, Footer, Header } = Layout;
 const apiKey = "e9a74a3703a74b43b3d8f2c5b3af6879";
 
 function App() {
   const [recipes, setRecipes] = useState([]);
+  const { height, width } = useWindowDimensions();
 
   useEffect(() => {
     const data = async () => {
@@ -37,7 +41,8 @@ function App() {
   return (
     <>
       <Layout className="layout">
-        <Navbar />
+        {width <= 600 ? <Sidebar /> : <Navbar />}
+
         <Content style={{ padding: "0 50px" }}>
           <Breadcrumb style={{ margin: "16px 0" }}>
             <Breadcrumb.Item>Home</Breadcrumb.Item>

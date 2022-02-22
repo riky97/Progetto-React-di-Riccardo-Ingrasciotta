@@ -18,6 +18,17 @@
   justify-content: space-between;
   align-items: center;
 }
+
+.sidebar {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  height: 80px;
+}
+.sidebar:first-child {
+  padding-right: 3em;
+}
+
 .d-flex {
   display: flex !important;
 }
