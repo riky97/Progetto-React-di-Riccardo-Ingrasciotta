@@ -1,5 +1,5 @@
 import React from "react";
-import { Row, Col } from "antd";
+import { Row, Col, Table } from "antd";
 import { ScrollMenu, VisibilityContext } from "react-horizontal-scrolling-menu";
 import { LeftArrow, RightArrow } from "./Arrows";
 
@@ -34,6 +34,13 @@ const Recipes = ({ recipe }) => {
   }
   return (
     <>
+      {/* <Table
+        columns={4}
+        pagination={{ position: ["bottomCenter"] }}
+        dataSource={recipe.map((rec) => (
+          <Recipe key={rec.id} recipe={rec} />
+        ))}
+      /> */}
       <h1>TOP {recipe.length} Vegetarian Recipes</h1>
       <Row gutter={[8, 32]} align="middle" justify="center">
         {recipe.map((rec) => (

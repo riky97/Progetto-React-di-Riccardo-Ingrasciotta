@@ -23,7 +23,7 @@ const Navbar = () => {
         <div className="home">
           <a href="/" className="a-home">
             {" "}
-            <HomeOutlined />{" "}
+            <HomeOutlined style={{ color: "#9cd590" }} />{" "}
           </a>
         </div>
       </Menu>

@@ -18,8 +18,14 @@
   background: var(--ant-primary-color) !important;
   color: var(--white-color) !important;
 }
+
+/*
 .anticon {
   color: var(--icon-color) !important;
+}*/
+
+.ant-rate-star-full {
+  color: #fadb14 !important;
 }
 
 .header {
@@ -91,4 +97,5 @@
   font-size: 40px;
   right: 0px;
   bottom: 0px;
+  color: var(--icon-color) !important;
 }

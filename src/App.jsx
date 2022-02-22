@@ -1,4 +1,3 @@
-import Recipes from "./component/Recipes";
 import { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Layout, Breadcrumb, BackTop, Pagination } from "antd";
@@ -10,6 +9,8 @@ import Navbar from "./component/Navbar";
 import FooterWeb from "./FooterWeb";
 import Sidebar from "./component/Sidebar";
 import useWindowDimensions from "./component/UseWindowDimensions";
+import Recipes from "./component/Recipes";
+import InformationRecipe from "./component/InformationRecipe";
 
 const { Content, Footer, Header } = Layout;
 const apiKey = "e9a74a3703a74b43b3d8f2c5b3af6879";
@@ -17,12 +18,11 @@ const apiKey = "e9a74a3703a74b43b3d8f2c5b3af6879";
 function App() {
   const [recipes, setRecipes] = useState([]);
   const { height, width } = useWindowDimensions();
-  const [current, setCurrent] = useState(1);
 
   useEffect(() => {
     const data = async () => {
       const res = await getRecipe();
-      //console.log(res);
+      console.log(res);
       setRecipes(res);
     };
     data();
@@ -33,20 +33,16 @@ function App() {
     //https://api.spoonacular.com/recipes/complexSearch?diet=vegetarian/&apiKey=${apiKey}
     try {
       const res = await axios.get(
-        `https://api.spoonacular.com/food/search?diet=vegetarian&offset=606&number=100&apiKey=${apiKey}`
+        `https://api.spoonacular.com/recipes/complexSearch?diet=vegetarian/&apiKey=${apiKey}`
       );
       const data = await res.data;
-      return data.searchResults[0].results;
+      //return data.searchResults[0].results;
+      return data.results;
     } catch (error) {
       console.log(error);
     }
   };
 
-  const onChange = (page) => {
-    console.log(page);
-
-    setCurrent(page);
-  };
   return (
     <>
       <Layout className="layout">
@@ -59,11 +55,14 @@ function App() {
           <div className="site-layout-content">
             <Router>
               <Routes>
-                {/* <Route exact path="/" element={<Recipes recipe={recipes} />} /> */}
+                <Route exact path="/" element={<Recipes recipe={recipes} />} />
+                <Route
+                  exact
+                  path="/recipe/:id"
+                  element={<InformationRecipe />}
+                />
               </Routes>
             </Router>
-
-            <Pagination current={current} onChange={onChange} total={50} />
           </div>
         </Content>
         <FooterWeb />

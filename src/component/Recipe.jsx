@@ -8,10 +8,10 @@ const Recipe = ({ recipe }) => {
   const [visible, setVisible] = useState(false);
   return (
     <Card
-      style={{ width: 300 }}
+      style={{ width: 280 }}
       cover={
         <a href={`/recipe/${recipe.id}`}>
-          <img style={{ width: 300 }} alt="Recipe" src={recipe.image} />
+          <img style={{ width: 280 }} alt="Recipe" src={recipe.image} />
         </a>
       }
       actions={[
@@ -37,9 +37,9 @@ const Recipe = ({ recipe }) => {
             placement="top"
             color={"#87d068"}
             key={"#87d068"}
-            title={recipe.name}
+            title={recipe.title}
           >
-            {recipe.name}
+            {recipe.title}
           </Tooltip>
         }
       />
