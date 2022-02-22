@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { Button, Drawer, Layout, Menu, Input } from "antd";
-import { HomeOutlined, MenuOutlined } from "@ant-design/icons";
+import { Drawer, Layout, Menu, Input } from "antd";
+import { HomeOutlined, MenuOutlined, CloseOutlined } from "@ant-design/icons";
 
 import FooterWeb from "../FooterWeb";
 const Header = Layout;
@@ -22,7 +22,14 @@ const Sidebar = () => {
     <>
       <Header className="d-grid">
         <Menu mode="horizontal" className="sidebar">
-          <MenuOutlined style={{ fontSize: 20 }} onClick={showDrawer} />
+          <div className="logo">
+            {" "}
+            <h2>Vegetarian Recipe</h2>
+          </div>
+
+          <div className="d-flex align-items-center">
+            <MenuOutlined style={{ fontSize: 20 }} onClick={showDrawer} />
+          </div>
         </Menu>
       </Header>
 
@@ -30,6 +37,7 @@ const Sidebar = () => {
         title="Vegetarian Recipe"
         placement="left"
         closable={false}
+        closeIcon={<CloseOutlined />}
         onClose={onClose}
         visible={visible}
         key="left"

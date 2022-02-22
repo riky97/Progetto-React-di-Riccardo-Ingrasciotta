@@ -1,3 +1,13 @@
+:root {
+  --ant-primary-color: #87d068 !important;
+
+  --icon-color: #1a1a1a1a !important;
+  --icon-color: #3bb4c1 !important;
+  --icon-color: #9cd590 !important;
+
+  --white-color: #fff;
+  --black-color: #000;
+}
 * {
   padding: 0;
   margin: 0;
@@ -5,11 +15,11 @@
 }
 .ant-btn-primary {
   border: none !important;
-  background: #87d068 !important;
-  color: #fff !important;
+  background: var(--ant-primary-color) !important;
+  color: var(--white-color) !important;
 }
 .anticon {
-  color: #141414 !important;
+  color: var(--icon-color) !important;
 }
 
 .header {
@@ -22,13 +32,17 @@
 .sidebar {
   display: flex;
   align-items: center;
-  justify-content: end;
+  justify-content: space-between;
   height: 80px;
 }
-.sidebar:first-child {
-  padding-right: 3em;
-}
 
+.sidebar:first-child {
+  padding-left: 1em;
+  text-transform: uppercase;
+}
+.sidebar:first-child:first-child {
+  align-items: center;
+}
 .d-flex {
   display: flex !important;
 }
@@ -36,11 +50,14 @@
   justify-content: center;
   align-items: center;
 }
+.align-items-center {
+  align-items: center;
+}
 .search-bar {
   max-width: 40%;
 }
 .ant-input:hover {
-  border-color: #87d068 !important;
+  border-color: var(--ant-primary-color) !important;
 }
 
 .ant-input-search-with-button .ant-input,
@@ -49,14 +66,17 @@
 }
 
 .site-layout-content {
-  min-height: 280px;
+  min-height: 100vh;
   padding: 24px;
-  background: #fff;
+  background: var(--white-color);
 }
 .logo {
   text-transform: uppercase;
   display: flex;
   align-items: center;
+}
+.logo h2 {
+  color: var(--icon-color) !important;
 }
 .a-home {
   font-size: 22px;

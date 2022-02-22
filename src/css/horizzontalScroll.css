@@ -1,0 +1,136 @@
+/*************HORIZZONTAL SCROLL*****************/
+
+/* .react-horizontal-scrolling-menu--wrapper {
+  /*background-color: #ddd !important;
+}
+
+.react-horizontal-scrolling-menu--item:first-child {
+  margin-left: 50px;
+}
+.react-horizontal-scrolling-menu--scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
+.react-horizontal-scrolling-menu--scroll-container {
+  -ms-overflow-style: none; /* IE and Edge */
+/*scrollbar-width: none; /* Firefox */
+/*height: 100% !important;*/
+/*}
+
+.react-horizontal-scrolling-menu--wrapper button {
+  background-color: #87d068 !important;
+  border-radius: 0.6em;
+  border: none;
+  width: 4em;
+}
+.react-horizontal-scrolling-menu--wrapper button .anticon-left,
+.anticon-right {
+  font-size: 2em !important;
+  color: #fff !important;
+}
+.ant-layout-sider-trigger > .anticon-left,
+.ant-layout-sider-trigger > .anticon-right {
+  font-size: 1.5em !important;
+}*/
+
+/*
+  .react-horizontal-scrolling-menu--wrapper {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .react-horizontal-scrolling-menu--scroll-container {
+    order: 1;
+    flex-basis: 100%;
+    flex-shrink: 0;
+  }*/
+
+/*.ant-card :hover {
+    scale: 1.5;
+    transition: all 1s;
+    z-index: 100;
+  }*/
+
+/*.ant-card-meta-title,
+  .ant-card-meta {
+  }*/
+/*
+.horizzontal-scroll-title {
+  display: inline;
+}
+
+.horizzontal-scroll-title h5 {
+  display: inline;
+  text-transform: capitalize;
+  font-style: italic;
+  color: var(--white);
+} */
+
+/*---------------------------------------------------- SCROLL CONTAINER  ---------------------------------------*/
+
+.horizontal-scroll {
+  margin-top: -0.25em;
+  display: inline-block;
+  width: 100%;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.horizontal-scroll::-webkit-scrollbar {
+  width: 0 !important;
+  display: none !important;
+}
+
+.horizontal-scroll {
+  overflow: -moz-scrollbars-none;
+}
+
+.horizontal-scroll {
+  -ms-overflow-style: none !important;
+}
+
+.horizontal-scroll .row {
+  display: flex;
+  flex-wrap: nowrap !important;
+}
+
+@media (max-width: 800px) {
+  .horizontal-scroll .col-lg-3 {
+    -ms-flex: 0 0 60.666667% !important;
+    flex: 0 0 60.666667% !important;
+    max-width: 60.666667% !important;
+  }
+  .horizontal-scroll .col-xl-3 {
+    -ms-flex: 0 0 60.666667% !important;
+    flex: 0 0 60.666667% !important;
+    max-width: 60.666667% !important;
+  }
+}
+
+@media (min-width: 800px) {
+  .horizontal-scroll .col-lg-3 {
+    -ms-flex: 0 0 43% !important;
+    flex: 0 0 43% !important;
+    max-width: 43% !important;
+  }
+  .horizontal-scroll .col-xl-3 {
+    -ms-flex: 0 0 43% !important;
+    flex: 0 0 43% !important;
+    max-width: 43% !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .horizontal-scroll .col-lg-3 {
+    -ms-flex: 0 0 23% !important;
+    flex: 0 0 23% !important;
+    max-width: 23% !important;
+  }
+  .horizontal-scroll .col-xl-3 {
+    -ms-flex: 0 0 23% !important;
+    flex: 0 0 23% !important;
+    max-width: 23% !important;
+  }
+}

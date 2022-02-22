@@ -37,9 +37,9 @@ const Recipe = ({ recipe }) => {
             placement="top"
             color={"#87d068"}
             key={"#87d068"}
-            title={recipe.title}
+            title={recipe.name}
           >
-            {recipe.title}
+            {recipe.name}
           </Tooltip>
         }
       />
