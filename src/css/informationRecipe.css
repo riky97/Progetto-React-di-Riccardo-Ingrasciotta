@@ -1,0 +1,22 @@
+:root {
+  --ant-primary-color: #87d068 !important;
+
+  --icon-color: #1a1a1a1a !important;
+  --icon-color: #3bb4c1 !important;
+  --icon-color: #9cd590 !important;
+
+  --white-color: #fff;
+  --black-color: #000;
+}
+
+.ant-list-item-meta-title {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+
+  font-size: 1.6rem !important;
+  text-transform: uppercase;
+  color: var(--ant-primary-color) !important;
+}
+.ant-list-item-main {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 0.9rem !important;
+}
