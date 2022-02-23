@@ -21,13 +21,20 @@ const Sidebar = () => {
   return (
     <>
       <Header className="d-grid">
-        <Menu mode="horizontal" className="sidebar">
-          <div className="logo">
+        <Menu
+          mode="horizontal"
+          className="sidebar"
+          style={{ display: "grid", gridTemplateColumns: "1fr auto .2fr" }}
+        >
+          <div className="logo" style={{ gridColumn: 1 }}>
             {" "}
-            <h2>Vegetarian Recipe</h2>
+            Vegetarian Recipe
           </div>
 
-          <div className="d-flex align-items-center">
+          <div
+            className="d-flex align-items-center"
+            style={{ gridColumn: 3, color: "#" }}
+          >
             <MenuOutlined style={{ fontSize: 20 }} onClick={showDrawer} />
           </div>
         </Menu>

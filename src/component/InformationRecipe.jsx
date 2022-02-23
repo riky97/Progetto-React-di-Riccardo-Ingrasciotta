@@ -56,8 +56,12 @@ const InformationRecipe = () => {
   // collapse description
   const collapseDescription = (descr) => {
     return (
-      <Collapse defaultActiveKey={["1"]}>
-        <Panel header="Description recipe" key="1">
+      <Collapse className="collapse-description" defaultActiveKey={["1"]}>
+        <Panel
+          className="collpase-description-panel"
+          header="Description recipe"
+          key="1"
+        >
           <p>{descr}</p>
         </Panel>
       </Collapse>
@@ -101,7 +105,7 @@ const InformationRecipe = () => {
           </List.Item>
         )}
       />
-      <br />
+
       <TableIngredient extIngredient={extendedIngredient} />
     </>
   );

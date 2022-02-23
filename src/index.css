@@ -72,7 +72,7 @@
 }
 
 .site-layout-content {
-  min-height: 100vh;
+  min-height: 80vh;
   padding: 12px;
   background: var(--white-color);
 }
@@ -81,7 +81,9 @@
   display: flex;
   align-items: center;
 }
-.logo h2 {
+.logo {
+  padding-left: 13px;
+  font-size: 1.2rem;
   color: var(--icon-color) !important;
 }
 .a-home {
@@ -95,7 +97,7 @@
 
 .back-top {
   font-size: 40px;
-  right: 0px;
-  bottom: 0px;
+  /*right: 0px;*/
+  /* bottom: 0px;*/
   color: var(--icon-color) !important;
 }

@@ -9,9 +9,9 @@ const Navbar = () => {
   return (
     <Header className="d-grid">
       <Menu mode="horizontal" className="header">
-        <div className="logo">
+        <div className="logo" style={{ fontSize: "1.5rem" }}>
           {" "}
-          <h2>Vegetarian Recipe</h2>
+          Vegetarian Recipe
         </div>
         <Search
           className="search-bar"

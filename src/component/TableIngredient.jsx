@@ -59,6 +59,7 @@ const TableIngredient = ({ extIngredient }) => {
 
   return (
     <Table
+      pagination={{ position: ["topRight"] }}
       style={{ width: "100%" }}
       columns={columns}
       dataSource={getData(extIngredient)}

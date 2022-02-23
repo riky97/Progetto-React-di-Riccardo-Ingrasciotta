@@ -69,7 +69,11 @@ function App() {
         </Content>
         <FooterWeb />
       </Layout>
-      <BackTop>
+      <BackTop
+        style={
+          width <= 992 ? { bottom: 15, right: 20 } : { bottom: 15, right: 50 }
+        }
+      >
         <UpCircleOutlined className="back-top" />
       </BackTop>
     </>
