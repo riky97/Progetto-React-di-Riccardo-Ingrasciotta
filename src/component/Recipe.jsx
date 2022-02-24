@@ -8,6 +8,7 @@ const Recipe = ({ recipe }) => {
   const [visible, setVisible] = useState(false);
   return (
     <Card
+      hoverable
       style={{ width: 280 }}
       cover={
         <a href={`/recipe/${recipe.id}`}>
@@ -32,6 +33,7 @@ const Recipe = ({ recipe }) => {
         }}
       />
       <Meta
+        className="meta-title"
         title={
           <Tooltip
             placement="top"

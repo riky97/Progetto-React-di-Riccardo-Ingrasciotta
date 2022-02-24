@@ -5,6 +5,8 @@
   --icon-color: #3bb4c1 !important;
   --icon-color: #9cd590 !important;
 
+  --breadcrump-color: #33bcb7;
+
   --white-color: #fff;
   --black-color: #000;
 }
@@ -77,6 +79,13 @@
 
   background: var(--white-color);
 }
+.bradcrump-item {
+  background-color: var(--breadcrump-color);
+  padding: 0.7em;
+  border-radius: 15em;
+  color: var(--white-color);
+  text-transform: uppercase;
+}
 .ant-list-item {
   display: flex !important;
   justify-content: center !important;
@@ -106,9 +115,12 @@
   transition: 0.1s all ease-in-out;
 }
 
+.meta-title span {
+  color: #141414 !important;
+}
+
 .back-top {
   font-size: 40px;
-  /*right: 0px;*/
-  /* bottom: 0px;*/
-  color: var(--icon-color) !important;
+
+  color: var(--breadcrump-color) !important;
 }

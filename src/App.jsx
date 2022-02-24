@@ -22,6 +22,7 @@ function App() {
   useEffect(() => {
     const data = async () => {
       const res = await getRecipe();
+
       setLoading(!loading);
       setRecipes(res);
     };
@@ -29,15 +30,14 @@ function App() {
   }, []);
 
   const getRecipe = async () => {
-    //http://localhost:5000/tasks
+    //http://localhost:5000/results
     //https://api.spoonacular.com/recipes/complexSearch?diet=vegetarian/&apiKey=${apiKey}
+    //https://api.spoonacular.com/recipes/complexSearch?diet=vegetarian&number=100&apiKey=${process.env.REACT_APP_RECIPE_API_KEY}
     try {
-      const res = await axios.get(
-        `https://api.spoonacular.com/recipes/complexSearch?diet=vegetarian&number=100&apiKey=${process.env.REACT_APP_RECIPE_API_KEY}`
-      );
+      const res = await axios.get(`http://localhost:5000/results`);
       const data = await res.data;
-
-      return data.results;
+      return data;
+      //return data.results;
     } catch (error) {
       console.log(error);
     }
@@ -52,7 +52,7 @@ function App() {
           style={width <= 992 ? { padding: "0 20px" } : { padding: "0 50px" }}
         >
           <Breadcrumb style={{ margin: "16px 0" }}>
-            <Breadcrumb.Item>
+            <Breadcrumb.Item className="bradcrump-item">
               ALL {recipes.length} vegetarian recipes
             </Breadcrumb.Item>
           </Breadcrumb>
