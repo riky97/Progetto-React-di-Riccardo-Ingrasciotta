@@ -52,7 +52,9 @@ function App() {
           style={width <= 992 ? { padding: "0 20px" } : { padding: "0 50px" }}
         >
           <Breadcrumb style={{ margin: "16px 0" }}>
-            <Breadcrumb.Item>Home</Breadcrumb.Item>
+            <Breadcrumb.Item>
+              ALL {recipes.length} vegetarian recipes
+            </Breadcrumb.Item>
           </Breadcrumb>
           <div className="site-layout-content">
             <Router>
