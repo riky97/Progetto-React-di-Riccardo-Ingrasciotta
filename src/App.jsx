@@ -13,16 +13,16 @@ import Recipes from "./component/Recipes";
 import InformationRecipe from "./component/InformationRecipe";
 
 const { Content, Footer, Header } = Layout;
-//const apiKey = "e9a74a3703a74b43b3d8f2c5b3af6879";
 
 function App() {
   const [recipes, setRecipes] = useState([]);
+  const [loading, setLoading] = useState(true);
   const { height, width } = useWindowDimensions();
 
   useEffect(() => {
     const data = async () => {
       const res = await getRecipe();
-      console.log(res);
+      setLoading(!loading);
       setRecipes(res);
     };
     data();
@@ -33,7 +33,7 @@ function App() {
     //https://api.spoonacular.com/recipes/complexSearch?diet=vegetarian/&apiKey=${apiKey}
     try {
       const res = await axios.get(
-        `https://api.spoonacular.com/recipes/complexSearch?diet=vegetarian/&apiKey=${process.env.REACT_APP_RECIPE_API_KEY}`
+        `https://api.spoonacular.com/recipes/complexSearch?diet=vegetarian&number=100&apiKey=${process.env.REACT_APP_RECIPE_API_KEY}`
       );
       const data = await res.data;
 
@@ -57,11 +57,15 @@ function App() {
           <div className="site-layout-content">
             <Router>
               <Routes>
-                <Route exact path="/" element={<Recipes recipe={recipes} />} />
+                <Route
+                  exact
+                  path="/"
+                  element={<Recipes loading={loading} recipe={recipes} />}
+                />
                 <Route
                   exact
                   path="/home"
-                  element={<Recipes recipe={recipes} />}
+                  element={<Recipes loading={loading} recipe={recipes} />}
                 />
                 <Route
                   exact

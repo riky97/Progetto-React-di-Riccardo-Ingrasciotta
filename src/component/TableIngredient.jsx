@@ -2,7 +2,7 @@ import React from "react";
 import { Table, Tag } from "antd";
 import useWindowDimensions from "./UseWindowDimensions";
 
-const TableIngredient = ({ extIngredient }) => {
+const TableIngredient = ({ loading, extIngredient }) => {
   const { height, width } = useWindowDimensions();
   const columns = [
     {
@@ -59,6 +59,7 @@ const TableIngredient = ({ extIngredient }) => {
 
   return (
     <Table
+      loading={loading}
       pagination={{ position: ["topRight"] }}
       style={{ width: "100%" }}
       columns={columns}

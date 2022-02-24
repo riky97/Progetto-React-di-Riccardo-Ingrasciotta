@@ -18,6 +18,7 @@ const { Panel } = Collapse;
 const InformationRecipe = () => {
   const [infoRecipe, setInfoRecipe] = useState([]);
   const [extendedIngredient, setExtendedIngredient] = useState([]);
+  const [loading, setLoading] = useState(true);
   const { height, width } = useWindowDimensions();
 
   //set info recipe
@@ -26,7 +27,8 @@ const InformationRecipe = () => {
       const data = await getRecipeInformation();
       setInfoRecipe([data]);
       setExtendedIngredient(data.extendedIngredients);
-      console.log(data);
+      setLoading(!loading);
+
       //return data;
     };
     info();
@@ -73,6 +75,7 @@ const InformationRecipe = () => {
         itemLayout="vertical"
         size="small"
         dataSource={infoRecipe}
+        loading={loading}
         renderItem={(item) => (
           <List.Item
             key={item.id}
@@ -105,7 +108,7 @@ const InformationRecipe = () => {
         )}
       />
 
-      <TableIngredient extIngredient={extendedIngredient} />
+      <TableIngredient loading={loading} extIngredient={extendedIngredient} />
     </>
   );
 };

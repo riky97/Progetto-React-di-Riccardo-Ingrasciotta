@@ -73,9 +73,20 @@
 
 .site-layout-content {
   min-height: 80vh;
-  padding: 12px;
+  padding: 24px;
+
   background: var(--white-color);
 }
+.ant-list-item {
+  display: flex !important;
+  justify-content: center !important;
+}
+.pagination-home {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2em !important;
+}
+
 .logo {
   text-transform: uppercase;
   display: flex;
