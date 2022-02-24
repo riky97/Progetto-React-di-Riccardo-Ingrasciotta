@@ -40,6 +40,7 @@ function App() {
       //return data.results;
     } catch (error) {
       console.log(error);
+      return [];
     }
   };
 
