@@ -13,7 +13,7 @@ import Recipes from "./component/Recipes";
 import InformationRecipe from "./component/InformationRecipe";
 
 const { Content, Footer, Header } = Layout;
-const apiKey = "e9a74a3703a74b43b3d8f2c5b3af6879";
+//const apiKey = "e9a74a3703a74b43b3d8f2c5b3af6879";
 
 function App() {
   const [recipes, setRecipes] = useState([]);
@@ -33,10 +33,10 @@ function App() {
     //https://api.spoonacular.com/recipes/complexSearch?diet=vegetarian/&apiKey=${apiKey}
     try {
       const res = await axios.get(
-        `https://api.spoonacular.com/recipes/complexSearch?diet=vegetarian/&apiKey=${apiKey}`
+        `https://api.spoonacular.com/recipes/complexSearch?diet=vegetarian/&apiKey=${process.env.REACT_APP_RECIPE_API_KEY}`
       );
       const data = await res.data;
-      //return data.searchResults[0].results;
+
       return data.results;
     } catch (error) {
       console.log(error);
@@ -58,6 +58,11 @@ function App() {
             <Router>
               <Routes>
                 <Route exact path="/" element={<Recipes recipe={recipes} />} />
+                <Route
+                  exact
+                  path="/home"
+                  element={<Recipes recipe={recipes} />}
+                />
                 <Route
                   exact
                   path="/recipe/:id"

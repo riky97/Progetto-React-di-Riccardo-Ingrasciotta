@@ -13,7 +13,6 @@ import TableIngredient from "./TableIngredient";
 
 import useWindowDimensions from "./UseWindowDimensions";
 
-const apiKey = "e9a74a3703a74b43b3d8f2c5b3af6879";
 const { Panel } = Collapse;
 
 const InformationRecipe = () => {
@@ -39,7 +38,7 @@ const InformationRecipe = () => {
     const idRecipe = href.substring(href.indexOf("recipe") + 7);
 
     const res = await axios.get(
-      `https://api.spoonacular.com/recipes/${idRecipe}/information/?apiKey=${apiKey}`
+      `https://api.spoonacular.com/recipes/${idRecipe}/information/?apiKey=${process.env.REACT_APP_RECIPE_API_KEY}`
     );
     const data = res.data;
     return data;
