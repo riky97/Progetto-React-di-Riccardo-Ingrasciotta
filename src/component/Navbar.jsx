@@ -1,11 +1,15 @@
 import React from "react";
 import { Layout, Menu, Input } from "antd";
 import { HomeOutlined } from "@ant-design/icons";
+import { useDispatch } from "react-redux";
+import { ingredients } from "../actions";
+
 const Header = Layout;
 const { Search } = Input;
 
 const Navbar = () => {
-  const onSearch = (value) => console.log(value);
+  const dispatch = useDispatch();
+
   return (
     <Header className="d-grid">
       <Menu mode="horizontal" className="header">
@@ -16,7 +20,9 @@ const Navbar = () => {
         <Search
           className="search-bar"
           placeholder="input search text"
-          onSearch={onSearch}
+          onSearch={(value) => {
+            dispatch(ingredients(value));
+          }}
           enterButton="Filters"
           size="large"
         />

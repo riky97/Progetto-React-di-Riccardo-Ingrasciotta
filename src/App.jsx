@@ -4,6 +4,7 @@ import { Layout, Breadcrumb, BackTop, Pagination } from "antd";
 import "antd/dist/antd.css";
 import axios from "axios";
 import { UpCircleOutlined } from "@ant-design/icons";
+import { useSelector } from "react-redux";
 
 import Navbar from "./component/Navbar";
 import FooterWeb from "./FooterWeb";
@@ -45,6 +46,8 @@ function App() {
     }
   };
 
+  const ingredients = useSelector((state) => state.ingredient);
+
   return (
     <>
       <Layout className="layout">
@@ -54,9 +57,15 @@ function App() {
           style={width <= 992 ? { padding: "0 20px" } : { padding: "0 50px" }}
         >
           <Breadcrumb style={{ margin: "16px 0" }}>
-            <Breadcrumb.Item className="bradcrump-item">
-              ALL {recipes.length} vegetarian recipes
-            </Breadcrumb.Item>
+            {ingredients !== "@@INIT" ? (
+              <Breadcrumb.Item className="bradcrump-item">
+                Filter by: {ingredients}
+              </Breadcrumb.Item>
+            ) : (
+              <Breadcrumb.Item className="bradcrump-item">
+                ALL {recipes.length} vegetarian recipes
+              </Breadcrumb.Item>
+            )}
           </Breadcrumb>
           <div className="site-layout-content">
             <Router>
