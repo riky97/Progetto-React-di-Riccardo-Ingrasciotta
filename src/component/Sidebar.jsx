@@ -2,14 +2,16 @@ import React, { useState } from "react";
 import { Drawer, Layout, Menu, Input } from "antd";
 import { HomeOutlined, MenuOutlined, CloseOutlined } from "@ant-design/icons";
 
+import { useDispatch } from "react-redux";
+import { ingredients } from "../actions";
+
 import FooterWeb from "../FooterWeb";
 const Header = Layout;
 const { Search } = Input;
 
 const Sidebar = () => {
   const [visible, setVisible] = useState(false);
-
-  const onSearch = (value) => console.log(value);
+  const dispatch = useDispatch();
 
   const showDrawer = () => {
     setVisible(true);
@@ -49,7 +51,7 @@ const Sidebar = () => {
         visible={visible}
         key="left"
         footer={<FooterWeb />}
-        width={320}
+        width="70%"
       >
         <div className="home">
           <a href="/" className="a-home">
@@ -59,8 +61,11 @@ const Sidebar = () => {
         </div>
         <br />
         <Search
-          placeholder="input search text"
-          onSearch={onSearch}
+          placeholder="Ingredients(carrots,tomatoes etc..)"
+          onSearch={(value) => {
+            dispatch(ingredients(value));
+            setVisible(!visible);
+          }}
           enterButton="Filters"
           size="large"
         />

@@ -1,5 +1,5 @@
-const searchIngredientsReducer = (state = "", action) => {
-  state = action.type;
+const searchIngredientsReducer = (state = [], action) => {
+  state.push(action.type);
   return state;
 };
 export default searchIngredientsReducer;

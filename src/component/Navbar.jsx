@@ -19,7 +19,7 @@ const Navbar = () => {
         </div>
         <Search
           className="search-bar"
-          placeholder="input search text"
+          placeholder="Ingredients(carrots,tomatoes etc..)"
           onSearch={(value) => {
             dispatch(ingredients(value));
           }}

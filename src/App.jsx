@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Layout, Breadcrumb, BackTop, Pagination } from "antd";
+import { Layout, Breadcrumb, BackTop, Tag } from "antd";
 import "antd/dist/antd.css";
 import axios from "axios";
 import { UpCircleOutlined } from "@ant-design/icons";
@@ -12,6 +12,7 @@ import Sidebar from "./component/Sidebar";
 import useWindowDimensions from "./component/UseWindowDimensions";
 import Recipes from "./component/Recipes";
 import InformationRecipe from "./component/InformationRecipe";
+import BreadcrumpTag from "./component/BreadcrumpTag";
 
 const { Content, Footer, Header } = Layout;
 
@@ -35,6 +36,7 @@ function App() {
     //https://api.spoonacular.com/recipes/complexSearch?diet=vegetarian/&apiKey=${apiKey}
     //https://api.spoonacular.com/recipes/complexSearch?diet=vegetarian&number=100&apiKey=${process.env.REACT_APP_RECIPE_API_KEY}
     ///https://api.spoonacular.com/recipes/findByIngredients?ingredients=carrots&number=10&limitLicense=true&ranking=1&ignorePantry=false&diet=vegetarian&apiKey=${process.env.REACT_APP_RECIPE_API_KEY}
+    //https://api.spoonacular.com/food/ingredients/search?sortDirection=asc&offset=606&number=10&diet=vegetarian&apiKey=${process.env.REACT_APP_RECIPE_API_KEY}
     try {
       const res = await axios.get(`http://localhost:5000/results`);
       const data = await res.data;
@@ -45,27 +47,17 @@ function App() {
       return [];
     }
   };
-
   const ingredients = useSelector((state) => state.ingredient);
 
   return (
     <>
       <Layout className="layout">
-        {width <= 600 ? <Sidebar /> : <Navbar />}
-
+        {width <= 668 ? <Sidebar /> : <Navbar />}
         <Content
           style={width <= 992 ? { padding: "0 20px" } : { padding: "0 50px" }}
         >
           <Breadcrumb style={{ margin: "16px 0" }}>
-            {ingredients !== "@@INIT" ? (
-              <Breadcrumb.Item className="bradcrump-item">
-                Filter by: {ingredients}
-              </Breadcrumb.Item>
-            ) : (
-              <Breadcrumb.Item className="bradcrump-item">
-                ALL {recipes.length} vegetarian recipes
-              </Breadcrumb.Item>
-            )}
+            <BreadcrumpTag ingredients={ingredients} recipes={recipes} />
           </Breadcrumb>
           <div className="site-layout-content">
             <Router>

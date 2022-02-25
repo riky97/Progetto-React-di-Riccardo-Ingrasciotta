@@ -79,12 +79,11 @@
 
   background: var(--white-color);
 }
-.bradcrump-item {
-  background-color: var(--breadcrump-color);
-  padding: 0.7em;
-  border-radius: 15em;
-  color: var(--white-color);
+.breadcrump-item-tag {
+  font-size: 0.9rem !important;
+  padding: 0.5em !important;
   text-transform: uppercase;
+  border-radius: 15em !important;
 }
 .ant-list-item {
   display: flex !important;

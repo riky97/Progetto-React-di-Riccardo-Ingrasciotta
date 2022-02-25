@@ -41,7 +41,9 @@ const Recipe = ({ recipe }) => {
             key={"#87d068"}
             title={recipe.title}
           >
-            {recipe.title}
+            <a href={`/recipe/${recipe.id}`} style={{ color: "#1a1a1a" }}>
+              {recipe.title}
+            </a>
           </Tooltip>
         }
       />
