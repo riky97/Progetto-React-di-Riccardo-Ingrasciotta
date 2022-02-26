@@ -1,13 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Row, Col, Table, List } from "antd";
-import { ScrollMenu, VisibilityContext } from "react-horizontal-scrolling-menu";
-import { LeftArrow, RightArrow } from "./Arrows";
+import { useDispatch } from "react-redux";
 
 import Recipe from "./Recipe";
 import useWindowDimensions from "./UseWindowDimensions";
+import { pathName } from "../actions";
 
 const Recipes = ({ loading, recipe }) => {
   const { height, width } = useWindowDimensions();
+  const dispatch = useDispatch();
+  dispatch(pathName());
   return (
     <List
       grid={{

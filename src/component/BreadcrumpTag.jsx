@@ -13,7 +13,7 @@ const BreadcrumpTag = ({ ingredients, recipes }) => {
     "purple",
   ];
 
-  return ingredients.length > 1 ? (
+  return ingredients !== "@@INIT" ? (
     <Breadcrumb.Item className="breadcrump-item">
       Filter by: {ingredients}
     </Breadcrumb.Item>

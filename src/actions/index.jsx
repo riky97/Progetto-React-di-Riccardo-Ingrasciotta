@@ -3,3 +3,14 @@ export const ingredients = (value) => {
     type: value,
   };
 };
+export const allRecipe = (value) => {
+  return {
+    type: value,
+  };
+};
+
+export const pathName = (value) => {
+  return {
+    type: value,
+  };
+};

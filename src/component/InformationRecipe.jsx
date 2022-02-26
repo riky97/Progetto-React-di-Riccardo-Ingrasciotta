@@ -2,8 +2,10 @@ import axios from "axios";
 import React from "react";
 import { useEffect, useState } from "react";
 import parse from "html-react-parser";
-
+import pathName from "../actions";
 import { List, Rate, Space, Collapse } from "antd";
+import { useDispatch } from "react-redux";
+
 import {
   UserOutlined,
   LikeOutlined,
@@ -20,6 +22,9 @@ const InformationRecipe = () => {
   const [extendedIngredient, setExtendedIngredient] = useState([]);
   const [loading, setLoading] = useState(true);
   const { height, width } = useWindowDimensions();
+  const dispatch = useDispatch();
+
+  dispatch(pathName("information"));
 
   //set info recipe
   useEffect(() => {

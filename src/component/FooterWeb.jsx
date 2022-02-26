@@ -4,7 +4,7 @@ const { Footer } = Layout;
 const FooterWeb = () => {
   return (
     <Footer style={{ textAlign: "center" }}>
-      Ant Design ©2018 Created by Ant UED
+      Vegetarina Recipe ©2022 Created by Riccardo Ingrasciotta
     </Footer>
   );
 };

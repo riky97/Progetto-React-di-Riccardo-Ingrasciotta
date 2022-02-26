@@ -5,7 +5,7 @@ import { HomeOutlined, MenuOutlined, CloseOutlined } from "@ant-design/icons";
 import { useDispatch } from "react-redux";
 import { ingredients } from "../actions";
 
-import FooterWeb from "../FooterWeb";
+import FooterWeb from "./FooterWeb";
 const Header = Layout;
 const { Search } = Input;
 
@@ -61,7 +61,7 @@ const Sidebar = () => {
         </div>
         <br />
         <Search
-          placeholder="Ingredients(carrots,tomatoes etc..)"
+          placeholder="Search recipe by Title"
           onSearch={(value) => {
             dispatch(ingredients(value));
             setVisible(!visible);

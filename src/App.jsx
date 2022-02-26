@@ -1,32 +1,33 @@
 import { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Layout, Breadcrumb, BackTop, Tag } from "antd";
+import { Layout, Breadcrumb, BackTop } from "antd";
 import "antd/dist/antd.css";
 import axios from "axios";
 import { UpCircleOutlined } from "@ant-design/icons";
 import { useSelector } from "react-redux";
 
 import Navbar from "./component/Navbar";
-import FooterWeb from "./FooterWeb";
+import FooterWeb from "./component/FooterWeb";
 import Sidebar from "./component/Sidebar";
 import useWindowDimensions from "./component/UseWindowDimensions";
 import Recipes from "./component/Recipes";
 import InformationRecipe from "./component/InformationRecipe";
 import BreadcrumpTag from "./component/BreadcrumpTag";
 
-const { Content, Footer, Header } = Layout;
+const { Content } = Layout;
 
 function App() {
   const [recipes, setRecipes] = useState([]);
   const [loading, setLoading] = useState(true);
-  const { height, width } = useWindowDimensions();
+  const { width } = useWindowDimensions();
 
   useEffect(() => {
     const data = async () => {
       const res = await getRecipe();
-
       setLoading(!loading);
       setRecipes(res);
+      //console.log(res);
+      //dispatch(allRecipe(res));
     };
     data();
   }, []);
@@ -47,7 +48,7 @@ function App() {
       return [];
     }
   };
-  const ingredients = useSelector((state) => state.ingredient);
+  const ingredients = useSelector((state) => state.recipe);
 
   return (
     <>
@@ -72,6 +73,7 @@ function App() {
                   path="/home"
                   element={<Recipes loading={loading} recipe={recipes} />}
                 />
+
                 <Route
                   exact
                   path="/recipe/:id"
