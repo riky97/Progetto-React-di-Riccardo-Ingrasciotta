@@ -4,7 +4,7 @@ import { Layout, Breadcrumb, BackTop, message } from "antd";
 import "antd/dist/antd.css";
 import axios from "axios";
 import { UpCircleOutlined } from "@ant-design/icons";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 
 import Navbar from "./component/Navbar";
 import FooterWeb from "./component/FooterWeb";
@@ -14,8 +14,6 @@ import Recipes from "./component/Recipes";
 import InformationRecipe from "./component/InformationRecipe";
 import BreadcrumpTag from "./component/BreadcrumpTag";
 import SearchRecipe from "./component/SearchRecipe";
-
-import { searchTitle } from "./actions";
 
 const { Content } = Layout;
 
@@ -31,7 +29,6 @@ function App() {
       setRecipes(res);
     };
     data();
-    //dispatch(allRecipe());
   }, []);
 
   const getRecipe = async () => {
@@ -40,7 +37,7 @@ function App() {
         `https://api.spoonacular.com/recipes/complexSearch?diet=vegetarian&number=100&apiKey=${process.env.REACT_APP_RECIPE_API_KEY}`
       );
       const data = await res.data;
-      //return data;
+
       return data.results;
     } catch (error) {
       console.log(error);
@@ -49,7 +46,6 @@ function App() {
   };
 
   //search title
-
   const onSearch = (value) => {
     if (value !== "") {
       window.location.href = `/search/${value}`;
