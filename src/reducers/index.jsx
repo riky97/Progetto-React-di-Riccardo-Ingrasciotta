@@ -1,12 +1,11 @@
-import RecipeReducer from "./searchRecipe";
-//import AllRecipeReducer from "./allRecipe";
-import PathName from "./pathName";
+import SearchRecipeReducer from "./searchRecipe";
+import PathNameReducer from "./pathName";
 
 import { combineReducers } from "redux";
 
 const rooter = combineReducers({
-  recipe: RecipeReducer,
-  path: PathName,
+  title: SearchRecipeReducer,
+  path: PathNameReducer,
 });
 
 export default rooter;

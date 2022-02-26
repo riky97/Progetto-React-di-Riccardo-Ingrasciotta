@@ -3,7 +3,7 @@ import { Drawer, Layout, Menu, Input } from "antd";
 import { HomeOutlined, MenuOutlined, CloseOutlined } from "@ant-design/icons";
 
 import { useDispatch } from "react-redux";
-import { ingredients } from "../actions";
+import { searchTitle } from "../actions";
 
 import FooterWeb from "./FooterWeb";
 const Header = Layout;
@@ -63,7 +63,7 @@ const Sidebar = () => {
         <Search
           placeholder="Search recipe by Title"
           onSearch={(value) => {
-            dispatch(ingredients(value));
+            dispatch(searchTitle(value));
             setVisible(!visible);
           }}
           enterButton="Filters"

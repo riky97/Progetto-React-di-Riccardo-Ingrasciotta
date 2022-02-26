@@ -1,5 +1,9 @@
 const searchRecipeReducer = (state = "", action) => {
-  state = action.type;
-  return state;
+  switch (action.type) {
+    case "TITLE":
+      return (state = action.value);
+    default:
+      return state;
+  }
 };
 export default searchRecipeReducer;

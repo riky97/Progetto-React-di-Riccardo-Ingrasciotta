@@ -4,12 +4,17 @@ import { useDispatch } from "react-redux";
 
 import Recipe from "./Recipe";
 import useWindowDimensions from "./UseWindowDimensions";
-import { pathName } from "../actions";
+
+import { pathHome } from "../actions";
 
 const Recipes = ({ loading, recipe }) => {
   const { height, width } = useWindowDimensions();
   const dispatch = useDispatch();
-  dispatch(pathName());
+
+  useEffect(() => {
+    dispatch(pathHome());
+  });
+
   return (
     <List
       grid={{
@@ -35,25 +40,6 @@ const Recipes = ({ loading, recipe }) => {
     />
   );
 };
-
-//OR
-// const Recipes = ({ recipe }) => {
-//   return (
-//     <ScrollMenu
-//       LeftArrow={LeftArrow}
-//       RightArrow={RightArrow}
-//       options={{
-//         ratio: 0.9,
-//         rootMargin: "5px",
-//         threshold: [0.01, 0.05, 0.5, 0.75, 0.95, 1],
-//       }}
-//     >
-//       {recipe.map((rec) => (
-//         <Recipe key={rec.id} itemId={rec.id} recipe={rec} />
-//       ))}
-//     </ScrollMenu>
-//   );
-// };
 
 export default Recipes;
 
@@ -131,3 +117,22 @@ export default Recipes;
           </div>
         </section>
       </section> */
+
+//OR
+// const Recipes = ({ recipe }) => {
+//   return (
+//     <ScrollMenu
+//       LeftArrow={LeftArrow}
+//       RightArrow={RightArrow}
+//       options={{
+//         ratio: 0.9,
+//         rootMargin: "5px",
+//         threshold: [0.01, 0.05, 0.5, 0.75, 0.95, 1],
+//       }}
+//     >
+//       {recipe.map((rec) => (
+//         <Recipe key={rec.id} itemId={rec.id} recipe={rec} />
+//       ))}
+//     </ScrollMenu>
+//   );
+// };

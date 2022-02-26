@@ -2,18 +2,16 @@ import axios from "axios";
 import React from "react";
 import { useEffect, useState } from "react";
 import parse from "html-react-parser";
-import pathName from "../actions";
+
 import { List, Rate, Space, Collapse } from "antd";
 import { useDispatch } from "react-redux";
 
-import {
-  UserOutlined,
-  LikeOutlined,
-  FieldTimeOutlined,
-} from "@ant-design/icons";
+import { UserOutlined, FieldTimeOutlined } from "@ant-design/icons";
 import TableIngredient from "./TableIngredient";
 
 import useWindowDimensions from "./UseWindowDimensions";
+
+import { pathInformation } from "../actions";
 
 const { Panel } = Collapse;
 
@@ -24,8 +22,6 @@ const InformationRecipe = () => {
   const { height, width } = useWindowDimensions();
   const dispatch = useDispatch();
 
-  dispatch(pathName("information"));
-
   //set info recipe
   useEffect(() => {
     const info = async () => {
@@ -33,7 +29,7 @@ const InformationRecipe = () => {
       setInfoRecipe([data]);
       setExtendedIngredient(data.extendedIngredients);
       setLoading(!loading);
-
+      dispatch(pathInformation());
       //return data;
     };
     info();

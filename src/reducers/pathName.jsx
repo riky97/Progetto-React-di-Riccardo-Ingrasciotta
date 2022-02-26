@@ -1,17 +1,13 @@
-const pathName = (state = "home", action) => {
+const PathNameReducer = (state = "home", action) => {
   switch (action.type) {
-    case "home":
-      state = "home";
-      break;
-    case "information":
-      state = "information";
-      break;
-    case "searchTitle":
-      state = "searchTitle";
-      break;
+    case "HOME":
+      return (state = "home");
+    case "INFORMATION":
+      return (state = "information");
+    case "SEARCH":
+      return (state = "search");
     default:
       return state;
   }
-  return state;
 };
-export default pathName;
+export default PathNameReducer;

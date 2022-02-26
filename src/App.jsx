@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Layout, Breadcrumb, BackTop } from "antd";
+import { Layout, Breadcrumb, BackTop, message } from "antd";
 import "antd/dist/antd.css";
 import axios from "axios";
 import { UpCircleOutlined } from "@ant-design/icons";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 
 import Navbar from "./component/Navbar";
 import FooterWeb from "./component/FooterWeb";
@@ -13,6 +13,9 @@ import useWindowDimensions from "./component/UseWindowDimensions";
 import Recipes from "./component/Recipes";
 import InformationRecipe from "./component/InformationRecipe";
 import BreadcrumpTag from "./component/BreadcrumpTag";
+import SearchRecipe from "./component/SearchRecipe";
+
+import { searchTitle } from "./actions";
 
 const { Content } = Layout;
 
@@ -26,39 +29,46 @@ function App() {
       const res = await getRecipe();
       setLoading(!loading);
       setRecipes(res);
-      //console.log(res);
-      //dispatch(allRecipe(res));
     };
     data();
+    //dispatch(allRecipe());
   }, []);
 
   const getRecipe = async () => {
-    //http://localhost:5000/results
-    //https://api.spoonacular.com/recipes/complexSearch?diet=vegetarian/&apiKey=${apiKey}
-    //https://api.spoonacular.com/recipes/complexSearch?diet=vegetarian&number=100&apiKey=${process.env.REACT_APP_RECIPE_API_KEY}
-    ///https://api.spoonacular.com/recipes/findByIngredients?ingredients=carrots&number=10&limitLicense=true&ranking=1&ignorePantry=false&diet=vegetarian&apiKey=${process.env.REACT_APP_RECIPE_API_KEY}
-    //https://api.spoonacular.com/food/ingredients/search?sortDirection=asc&offset=606&number=10&diet=vegetarian&apiKey=${process.env.REACT_APP_RECIPE_API_KEY}
     try {
-      const res = await axios.get(`http://localhost:5000/results`);
+      const res = await axios.get(
+        `https://api.spoonacular.com/recipes/complexSearch?diet=vegetarian&number=100&apiKey=${process.env.REACT_APP_RECIPE_API_KEY}`
+      );
       const data = await res.data;
-      return data;
-      //return data.results;
+      //return data;
+      return data.results;
     } catch (error) {
       console.log(error);
       return [];
     }
   };
-  const ingredients = useSelector((state) => state.recipe);
+
+  //search title
+
+  const onSearch = (value) => {
+    if (value !== "") {
+      window.location.href = `/search/${value}`;
+    } else {
+      message.error("No empty string!", [1]);
+    }
+  };
+
+  const path = useSelector((state) => state.path);
 
   return (
     <>
       <Layout className="layout">
-        {width <= 668 ? <Sidebar /> : <Navbar />}
+        {width <= 668 ? <Sidebar /> : <Navbar onSearch={onSearch} />}
         <Content
           style={width <= 992 ? { padding: "0 20px" } : { padding: "0 50px" }}
         >
           <Breadcrumb style={{ margin: "16px 0" }}>
-            <BreadcrumpTag ingredients={ingredients} recipes={recipes} />
+            <BreadcrumpTag path={path} recipes={recipes} />
           </Breadcrumb>
           <div className="site-layout-content">
             <Router>
@@ -77,8 +87,9 @@ function App() {
                 <Route
                   exact
                   path="/recipe/:id"
-                  element={<InformationRecipe />}
+                  element={<InformationRecipe loading={loading} />}
                 />
+                <Route exact path="/search/:id" element={<SearchRecipe />} />
               </Routes>
             </Router>
           </div>

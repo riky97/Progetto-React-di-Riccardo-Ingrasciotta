@@ -2,12 +2,11 @@ import React from "react";
 import { Layout, Menu, Input } from "antd";
 import { HomeOutlined } from "@ant-design/icons";
 import { useDispatch } from "react-redux";
-import { ingredients } from "../actions";
 
 const Header = Layout;
 const { Search } = Input;
 
-const Navbar = () => {
+const Navbar = ({ onSearch }) => {
   const dispatch = useDispatch();
 
   return (
@@ -19,10 +18,8 @@ const Navbar = () => {
         </div>
         <Search
           className="search-bar"
-          placeholder="Search by TITLE or INGREDIENTS"
-          onSearch={(value) => {
-            dispatch(ingredients(value));
-          }}
+          placeholder="Search by TITLE or INGREDIENT"
+          onSearch={onSearch}
           enterButton="Filters"
           size="large"
         />
