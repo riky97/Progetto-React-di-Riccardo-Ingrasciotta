@@ -9,7 +9,7 @@ import FooterWeb from "./FooterWeb";
 const Header = Layout;
 const { Search } = Input;
 
-const Sidebar = () => {
+const Sidebar = ({ onSearch }) => {
   const [visible, setVisible] = useState(false);
   const dispatch = useDispatch();
 
@@ -62,10 +62,7 @@ const Sidebar = () => {
         <br />
         <Search
           placeholder="Search recipe by Title"
-          onSearch={(value) => {
-            dispatch(searchTitle(value));
-            setVisible(!visible);
-          }}
+          onSearch={onSearch}
           enterButton="Filters"
           size="large"
         />

@@ -15,22 +15,6 @@ const BreadcrumpTag = ({ path, recipes }) => {
     "purple",
   ];
 
-  //   return ingredients !== "@@INIT" ? (
-  //     <Breadcrumb.Item className="breadcrump-item">
-  //       Filter by: {ingredients}
-  //     </Breadcrumb.Item>
-  //   ) : (
-  //     <Breadcrumb.Item>
-  //       <Tag
-  //         color={color[Math.floor(Math.random() * color.length)]}
-  //         className="breadcrump-item-tag"
-  //       >
-  //         ALL {recipes.length} vegetarian recipes
-  //       </Tag>
-  //     </Breadcrumb.Item>
-  //   );
-  // };
-
   const pathName = (path) => {
     if (path === "home") {
       return (
@@ -39,7 +23,7 @@ const BreadcrumpTag = ({ path, recipes }) => {
             color={color[Math.floor(Math.random() * color.length)]}
             className="breadcrump-item-tag"
           >
-            ALL {recipes.length} vegetarian recipes
+            TOP {recipes.length} vegetarian recipes
           </Tag>
         </Breadcrumb.Item>
       );

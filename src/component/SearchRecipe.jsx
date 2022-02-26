@@ -27,11 +27,6 @@ const SearchRecipe = ({ loading }) => {
   }, []);
 
   const getRecipeTitle = async () => {
-    //http://localhost:5000/results
-    //https://api.spoonacular.com/recipes/complexSearch?diet=vegetarian/&apiKey=${apiKey}
-    //https://api.spoonacular.com/recipes/complexSearch?diet=vegetarian&number=100&apiKey=${process.env.REACT_APP_RECIPE_API_KEY}
-    ///https://api.spoonacular.com/recipes/findByIngredients?ingredients=carrots&number=10&limitLicense=true&ranking=1&ignorePantry=false&diet=vegetarian&apiKey=${process.env.REACT_APP_RECIPE_API_KEY}
-    //https://api.spoonacular.com/food/ingredients/search?sortDirection=asc&offset=606&number=10&diet=vegetarian&apiKey=${process.env.REACT_APP_RECIPE_API_KEY}
     try {
       const path = window.location.href;
       const title = path.substring(path.indexOf("search") + 7);

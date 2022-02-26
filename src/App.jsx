@@ -59,7 +59,11 @@ function App() {
   return (
     <>
       <Layout className="layout">
-        {width <= 668 ? <Sidebar /> : <Navbar onSearch={onSearch} />}
+        {width <= 668 ? (
+          <Sidebar onSearch={onSearch} />
+        ) : (
+          <Navbar onSearch={onSearch} />
+        )}
         <Content
           style={width <= 992 ? { padding: "0 20px" } : { padding: "0 50px" }}
         >

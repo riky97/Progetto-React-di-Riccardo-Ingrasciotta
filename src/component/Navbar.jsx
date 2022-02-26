@@ -7,8 +7,6 @@ const Header = Layout;
 const { Search } = Input;
 
 const Navbar = ({ onSearch }) => {
-  const dispatch = useDispatch();
-
   return (
     <Header className="d-grid">
       <Menu mode="horizontal" className="header">
