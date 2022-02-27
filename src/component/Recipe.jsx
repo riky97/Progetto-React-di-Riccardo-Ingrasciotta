@@ -16,7 +16,10 @@ const Recipe = ({ recipe }) => {
         </a>
       }
       actions={[
-        <EyeOutlined onClick={() => setVisible(true)} />,
+        <EyeOutlined
+          style={{ color: "yellowgreen" }}
+          onClick={() => setVisible(true)}
+        />,
         <a href={`/recipe/${recipe.id}`}>
           <SettingOutlined key="setting" />
         </a>,

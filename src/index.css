@@ -10,6 +10,112 @@
   --white-color: #fff;
   --black-color: #000;
 }
+
+/*********FONT************/
+
+@font-face {
+  font-family: Title;
+  src: url("./fonts/SofiaPro-Bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: Paragraph;
+  src: url("./fonts/Mark-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: Link;
+  src: url("./fonts/Mark-Bold.ttf") format("truetype");
+}
+/**********BASE*****************/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.logo {
+  font-family: Title !important;
+}
+
+p,
+pre,
+span,
+.ant-list-item-main {
+  font-family: Paragraph !important;
+}
+
+a {
+  font-family: Link !important;
+  color: yellowgreen !important;
+}
+a:hover {
+}
+
+h1 {
+  font-size: 2.4rem !important;
+}
+h2 {
+  font-size: 2rem !important;
+}
+h3,
+.logo {
+  font-size: 1.8rem !important;
+}
+h4 {
+  font-size: 1.4rem !important;
+}
+h5 {
+  font-size: 1.025rem !important;
+}
+h6 {
+  font-size: 1rem !important;
+}
+
+@media screen and (min-width: 768px) {
+  h1 {
+    font-size: 2.8rem !important;
+  }
+  h2 {
+    font-size: 2.4rem !important;
+  }
+  h3 {
+    font-size: 2rem !important;
+  }
+  h4 {
+    font-size: 1.5rem !important;
+  }
+  h5 {
+    font-size: 1.25rem !important;
+  }
+  h6 {
+    font-size: 1.1rem !important;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  h1 {
+    font-size: 3.7rem !important;
+  }
+  h2 {
+    font-size: 3.4rem !important;
+  }
+  h3 {
+    font-size: 2.7rem !important;
+  }
+  h4 {
+    font-size: 1.5rem !important;
+  }
+  h5 {
+    font-size: 1.25rem !important;
+  }
+  h6 {
+    font-size: 1.05rem !important;
+  }
+}
+
+/*********SITE**************/
+
 * {
   padding: 0;
   margin: 0;
@@ -20,11 +126,6 @@
   background: var(--ant-primary-color) !important;
   color: var(--white-color) !important;
 }
-
-/*
-.anticon {
-  color: var(--icon-color) !important;
-}*/
 
 .ant-rate-star-full {
   color: #fadb14 !important;
@@ -116,6 +217,10 @@
 
 .meta-title span {
   color: #141414 !important;
+}
+
+.ant-pagination-item a {
+  color: #0008 !important;
 }
 
 .back-top {
