@@ -6,7 +6,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/riky97/Progetto-React-di-Riccardo-Ingrasciotta">
-    <img src="./src/images/readme/CatturaHero.PNG" alt="Logo" width="120" height="180">
+    <img src="./src/images/Readme/logo_screenshot.PNG" alt="Logo" width="120" height="180">
   </a>
 
 <h3 align="center">Vegetarian Recipe</h3>
