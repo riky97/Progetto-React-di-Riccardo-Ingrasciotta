@@ -38,7 +38,8 @@ const InformationRecipe = () => {
   // get information recipe from server
   const getRecipeInformation = async () => {
     const href = window.location.href;
-    const idRecipe = href.substring(href.indexOf("recipe") + 7);
+    const split = href.split("/");
+    const idRecipe = split[split.length - 1];
 
     const res = await axios.get(
       `https://api.spoonacular.com/recipes/${idRecipe}/information/?apiKey=${process.env.REACT_APP_RECIPE_API_KEY}`

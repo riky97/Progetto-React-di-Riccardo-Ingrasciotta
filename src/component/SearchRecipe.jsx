@@ -28,8 +28,10 @@ const SearchRecipe = ({ loading }) => {
 
   const getRecipeTitle = async () => {
     try {
-      const path = window.location.href;
-      const title = path.substring(path.indexOf("search") + 7);
+      const href = window.location.href;
+      const split = href.split("/");
+      const title = split[split.length - 1];
+
       const res = await axios.get(
         `https://api.spoonacular.com/recipes/complexSearch?diet=vegetarian&titleMatch=${title}&apiKey=${process.env.REACT_APP_RECIPE_API_KEY}`
       );
