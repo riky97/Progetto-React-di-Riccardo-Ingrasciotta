@@ -1,70 +1,155 @@
-# Getting Started with Create React App
+# Progetto React di Riccardo Ingrasciotta
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<div id="top"></div>
+<br/>
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <a href="https://github.com/riky97/Progetto-React-di-Riccardo-Ingrasciotta">
+    <img src="./src/images/readme/CatturaHero.PNG" alt="Logo" width="120" height="180">
+  </a>
 
-## Available Scripts
+<h3 align="center">Vegetarian Recipe</h3>
 
-In the project directory, you can run:
+  <p align="center">
+    <a href="https://github.com/riky97/Progetto-React-di-Riccardo-Ingrasciotta"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="https://github.com/riky97/Progetto-React-di-Riccardo-Ingrasciotta">View Demo</a>
+    ·
+    <a href="https://github.com/riky97/Progetto-React-di-Riccardo-Ingrasciotta/issues/">Report Bug</a>
+    ·
+    <a href="https://github.com/riky97/Progetto-React-di-Riccardo-Ingrasciotta/issues/">Request Feature</a>
+  </p>
+</div>
+<br/>
+<!-- TABLE OF CONTENTS -->
 
-### `yarn start`
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+      <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage">Usage</a></li>
+     <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ol>
+</details>
+<!-- ABOUT THE PROJECT -->
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## About The Project
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+[![Product Name Screen Shot][product-screenshot]](https://621c995dd9ab74789d50e574--my-vegetarian-recipe-app.netlify.app/)
+[![Product Name Screen Shot][product-screenshot2]](https://621c995dd9ab74789d50e574--my-vegetarian-recipe-app.netlify.app/)
 
-### `yarn test`
+### Built With
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- [HTML](https://www.w3schools.com/html/html_intro.asp)
+- [CSS](https://www.w3schools.com/css/)
+- [Javascript](https://www.javascript.com/)
+- [React](https://reactjs.org/)
+- [Redux](https://redux.js.org/)
+- [Antd](https://ant.design/)
 
-### `yarn build`
+<p align="right"><a href="#top"><img src="img/topArrow_readme.png" alt="Back to top" width="30" height="30"></a></p>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<!-- GETTING STARTED -->
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Getting Started
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+To install the project locally, copy and paste the following command on the command prompt.
+A local copy will be created that you can modify as you wish.
 
-### `yarn eject`
+### Prerequisites
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- npm
+  ```sh
+  npm install npm@latest -g
+  ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Installation
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1. Clone the repo
+   ```sh
+   git clone https://github.com/riky97/Progetto-React-di-Riccardo-Ingrasciotta.git
+   ```
+2. Install NPM packages
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+   ```sh
+   npm install
+   ```
 
-## Learn More
+3. Create file `.env` in the root of the project
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+   ```sh
+   REACT_APP_RECIPE_API_KEY= ENTER YOUR API
+   ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+4. In file `.env`
 
-### Code Splitting
+   ```sh
+   REACT_APP_WEBSITE_NAME=Vegetarian Recipe
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+5. Start Localhost server
 
-### Analyzing the Bundle Size
+   ```sh
+   npm start or yarn start
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+<p align="right"><a href="#top"><img src="img/topArrow_readme.png" alt="Back to top" width="30" height="30"></a></p>
 
-### Making a Progressive Web App
+## Usage
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+The project is based on the research of vegetarian recipes.
+The top 100 recipes based on likes are shown on the homepage.
+Thanks to a search box you can search for all the recipes based on the title or ingredient you prefer.
+Clicking on a recipe a page will appear showing all the information about that recipe.
+<br/>
+To test the app:
+_[follow this link](https://621c995dd9ab74789d50e574--my-vegetarian-recipe-app.netlify.app/)_
 
-### Advanced Configuration
+<p align="right"><a href="#top"><img src="img/topArrow_readme.png" alt="Back to top" width="30" height="30"></a></p>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+<!-- CONTRIBUTING -->
 
-### Deployment
+## Contributing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
-### `yarn build` fails to minify
+If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
+Don't forget to give the project a star! Thanks again!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+<p align="right"><a href="#top"><img src="img/topArrow_readme.png" alt="Back to top" width="30" height="30"></a></p>
+
+<!-- CONTACT -->
+
+## Contact
+
+Riccardo - ringrasciotta97@gmail.com
+
+Project Link: [https://github.com/riky97/Progetto-React-di-Riccardo-Ingrasciotta](https://github.com/riky97/Progetto-React-di-Riccardo-Ingrasciotta)
+
+<p align="right"><a href="#top"><img src="img/topArrow_readme.png" alt="Back to top" width="30" height="30"></a></p>
+
+<!-- MARKDOWN LINKS & IMAGES -->
+
+[product-screenshot]: ./src/images/Readme/home_screenshot.PNG
+[product-screenshot2]: ./src/images/Readme/information_screenshot.PNG
