@@ -222,7 +222,12 @@ h6 {
 .ant-pagination-item a {
   color: #0008 !important;
 }
-
+.ant-pagination-item:hover {
+  border-color: var(--ant-primary-color) !important;
+}
+.ant-pagination-item-active {
+  border-color: var(--ant-primary-color) !important;
+}
 .back-top {
   font-size: 40px;
 

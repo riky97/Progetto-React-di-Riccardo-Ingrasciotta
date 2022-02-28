@@ -11,7 +11,6 @@ const { Search } = Input;
 
 const Sidebar = ({ onSearch }) => {
   const [visible, setVisible] = useState(false);
-  const dispatch = useDispatch();
 
   const showDrawer = () => {
     setVisible(true);
@@ -35,9 +34,12 @@ const Sidebar = ({ onSearch }) => {
 
           <div
             className="d-flex align-items-center"
-            style={{ gridColumn: 3, color: "#" }}
+            style={{ gridColumn: 3, color: "yellowgreen" }}
           >
-            <MenuOutlined style={{ fontSize: 20 }} onClick={showDrawer} />
+            <MenuOutlined
+              style={{ fontSize: 20, color: "" }}
+              onClick={showDrawer}
+            />
           </div>
         </Menu>
       </Header>
