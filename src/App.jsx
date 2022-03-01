@@ -34,7 +34,7 @@ function App() {
   const getRecipe = async () => {
     try {
       const res = await axios.get(
-        `https://api.spoonacular.com/recipes/complexSearch?diet=vegetarian&number=100&apiKey=${process.env.REACT_APP_RECIPE_API_KEY}`
+        `https://api.spoonacular.com/recipes/complexSearch?diet=vegetarian&number=50&apiKey=${process.env.REACT_APP_RECIPE_API_KEY}`
       );
       const data = await res.data;
 
